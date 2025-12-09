@@ -68,7 +68,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="absolute top-4 -left-12 bg-card rounded-xl shadow-lg p-3 border border-border animate__animated animate__bounceIn animate__delay-2s">
+              <div className="absolute top-4 -left-4 bg-card rounded-xl shadow-lg p-3 border border-border animate__animated animate__bounceIn animate__delay-2s">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
                     <span className="text-2xl">🦾</span>

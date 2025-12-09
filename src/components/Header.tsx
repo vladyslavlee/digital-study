@@ -32,7 +32,7 @@ const Header = () => {
       <div className="container-main">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <a href="#">
             <img src={logoImage} alt="DigitalStudy" className="max-w-[100px] md:max-w-[150px]" />
             {/* <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">P</span>

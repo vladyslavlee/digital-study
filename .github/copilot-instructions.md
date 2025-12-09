@@ -1,55 +1,80 @@
-<!-- Copilot / AI agent instructions for the ppc-mastery-launch repo -->
+<!-- Copilot / AI agent instructions for the digital-study repo -->
 # Repo summary
-- Tech: Vite + React + TypeScript + Tailwind + shadcn-style UI (Radix wrappers).
+- Tech: Vite + React 18 + TypeScript + Tailwind CSS + shadcn-style UI (Radix wrappers).
 - Entrypoint: `src/main.tsx` -> `src/App.tsx`.
-- Routing: `react-router-dom` with routes declared in `src/App.tsx` (routes: `/` and `/ppc`).
+- Routing: `react-router-dom` v6 with single landing page (`/ppc`); all other routes redirect to `/ppc`.
 
 # Quick start (commands verified in `package.json`)
-- Install: `npm install`.
-- Dev server: `npm run dev` (Vite server runs on port `8080` by default per `vite.config.ts`).
-- Build: `npm run build` and preview with `npm run preview`.
-- Lint: `npm run lint`.
-
+- Install: `npm install` or `bun install` (workspace uses `bun.lockb`).
+- Dev server: `npm run dev` (Vite server runs on port `8080` with host `::` for network access per `vite.config.ts`).
+- Build: `npm run build` (production) or `npm run build:dev` (development with unminified output).
+- Preview: `npm run preview` (local preview of production build).
+- Lint: `npm run lint` (ESLint + TypeScript).
 # Project structure & important files
-- `src/main.tsx`: imports global CSS (`index.css`), third-party styles (`animate.css`) and mounts `<App />`.
-- `src/App.tsx`: top-level providers (React Query `QueryClientProvider`, `TooltipProvider`, `Toaster` components) and app routing.
-- `src/pages/`: page-level components, e.g. `Index.tsx`, `Ppc.tsx`, `NotFound.tsx`.
-- `src/components/`: page sections and feature components (Hero, Program, Testimonials, PaymentForm, etc.).
-- `src/components/ui/`: shared UI primitives and wrappers (Radix + shadcn-style components). Prefer these over raw HTML elements for consistency.
-- `src/hooks/` and `src/lib/utils.ts`: shared logic and helpers.
-- `vite.config.ts`: alias `@` -> `./src` (use `@/path/to/file` imports).
-- `tailwind.config.ts`: content paths and theme tokens — keep Tailwind classes and CSS variables consistent with this config.
+- `src/main.tsx`: imports global CSS (`index.css`), `animate.css` (animation library), and mounts `<App />`.
+- `src/App.tsx`: top-level providers (`QueryClientProvider`, `TooltipProvider`, `Toaster`, `Sonner`), routing, and single route to `/ppc`.
+- `src/pages/`: page-level components (currently only `Ppc.tsx` – the main landing page).
+- `src/components/`: section components exported from `Ppc.tsx` (Header, HeroSection, ReasonsSection, ProgramSection, ResultsSection, FAQSection, MainFormSection, TestimonialsSection, ContactSection, Footer, PaymentForm, etc.).
+- `src/components/ui/`: shared Radix-based UI primitives (Button, Input, Dialog, etc.) – **prefer these over raw HTML**.
+- `src/hooks/use-toast.ts`: toast notification management via `sonner` library.
+- `src/lib/utils.ts`: `cn()` utility (Tailwind + clsx merge) – use for conditional class composition.
+- `vite.config.ts`: path alias `@` → `./src` (e.g., `@/components/Button`).
+- `tailwind.config.ts`: theme tokens (colors, fonts); uses CSS variables like `--primary`, `--background`, etc.
 
 # Conventions & patterns to follow (specific to this repo)
-- Use the `@` alias for imports (e.g. `import { Button } from '@/components/ui/button'`).
-- Prefer UI primitives in `src/components/ui/*` (these wrap Radix/third-party primitives and implement design tokens).
-- Styling: Tailwind utility classes + theme tokens (see `tailwind.config.ts` for color tokens like `background`, `primary`, `destructive`, and custom `sidebar` group).
-- State & data fetching: app uses `@tanstack/react-query` at top-level (`QueryClientProvider`). Place async hooks alongside components or under `src/hooks`.
-- Forms: `react-hook-form` is available in dependencies; some simple forms use local `useState` (see `PaymentForm.tsx`) and toasts via `use-toast` hook — follow existing toast shape when adding UX feedback.
+- **Imports**: Always use `@` alias (e.g., `import { Button } from '@/components/ui/button'`).
+- **UI components**: Prefer `src/components/ui/*` primitives over HTML elements for consistency with Radix/design system.
+- **Styling**: Use Tailwind utility classes + theme tokens (`--primary`, `--background`, `--destructive`, etc. from `tailwind.config.ts`). Merge classes conditionally with `cn()` utility (e.g., `cn("base-class", { "active-class": isActive }`).
+- **Animations**: Use `animate.css` classes with `animate__` prefix (e.g., `animate__fadeInUp`, `animate__delay-1s`). See `HeroSection.tsx` for examples.
+- **Forms & UX**: `PaymentForm.tsx` uses local `useState` (not `react-hook-form`) for simple forms. Show toast notifications via `useToast()` hook with shape: `{ title: "...", description: "...", variant?: "destructive" | undefined }`.
+- **Data fetching**: `@tanstack/react-query` is available at top-level (`QueryClientProvider`); place async hooks in components or `src/hooks/`.
+- **Styling edge cases**: Use `cn()` from `lib/utils.ts` to merge Tailwind classes safely (handles class conflicts).
 
 # Integration points & notable libraries
-- Routing: `react-router-dom` (v6) — look at `src/App.tsx` routes.
-- Data caching: `@tanstack/react-query` configured in `src/App.tsx`.
-- Notifications: `src/components/ui/toaster` and `src/components/ui/sonner` are both included; use the existing wrapper hooks (`src/hooks/use-toast.ts`) when showing toasts.
-- UI primitives: heavy use of Radix via `@radix-ui/*` packages and shadcn-style components in `src/components/ui`.
-- Build tooling: Vite with `@vitejs/plugin-react-swc`. Dev server configured in `vite.config.ts` (port `8080`, host `::`).
+- **Routing**: `react-router-dom` v6 – single route `/ppc`; redirects from `/` and catch-all `*` to `/ppc` (see `src/App.tsx`).
+- **Notifications**: `sonner` library via `src/hooks/use-toast.ts` – use `const { toast } = useToast()` then `toast({ ... })`.
+- **UI primitives**: Radix UI components wrapped in shadcn-style helpers (e.g., `Button`, `Dialog`, `Input`). All in `src/components/ui/`.
+- **Build tool**: Vite with `@vitejs/plugin-react-swc` (SWC for faster JSX compilation). Dev server on `::`:`8080`.
 
 # What an AI agent should do first (practical checklist)
-- Read `src/main.tsx` and `src/App.tsx` to understand providers and routes.
-- Read a representative component under `src/components/` (e.g. `PaymentForm.tsx`) to follow patterns for props, hooks, and toast usage.
-- Use `@` imports and existing UI primitives when adding components; mimic `className` + Tailwind usage rather than adding global CSS.
-- When running locally: `npm install` then `npm run dev` and open `http://localhost:8080` or the machine IP (host `::` exposes network interfaces).
+1. Read `src/main.tsx` and `src/App.tsx` to understand entry point, providers, and routing.
+2. Read `src/pages/Ppc.tsx` to see the landing page structure and section composition.
+3. Read a representative component (e.g., `PaymentForm.tsx` or `HeroSection.tsx`) to understand:
+   - Props typing, `useState` patterns, and `useToast()` usage.
+   - Tailwind class usage, `animate.css` animations, and `@` imports.
+4. For new components: use `@` imports, Radix-based UI primitives from `src/components/ui/`, and Tailwind + `cn()` for styling.
+5. **Run locally**: `npm install` (or `bun install`), then `npm run dev` → visit `http://localhost:8080` (or machine IP since host is `::`).
+6. Check `src/lib/utils.ts` for the `cn()` helper and `src/hooks/use-toast.ts` for toast patterns.
 
-# Notes about missing or unusual things found
-- There is no `start` or `test` script in `package.json` — use `npm run dev` for local development and `npm run build` for production builds.
+# Notable design patterns & quirks
+- **Landing page**: All content in single page (`Ppc.tsx`); sections imported and composed sequentially. Each section is a standalone component with self-contained styling.
+- **Animations**: Extensive use of `animate.css` (imported globally in `src/main.tsx`). Common classes: `animate__fadeInUp`, `animate__fadeInLeft`, `animate__delay-1s`, `animate__delay-2s`.
+- **Forms**: `PaymentForm.tsx` demonstrates pattern: local `useState`, form validation (check for empty fields), and `useToast()` for feedback. Redirects to external URL on submit.
+- **No test suite**: No `test` or `test:watch` scripts in `package.json`. Linting is via ESLint + TypeScript strict mode.
 
-# Examples (small snippets)
-- Import via alias: `import PaymentForm from '@/components/PaymentForm';`
-- Show a toast: use the repo's `use-toast` helper: `toast({ title: '...', description: '...' })` (see `src/components/PaymentForm.tsx`).
+# Code examples
+**Using UI primitives with Tailwind + animations:**
+```tsx
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
-# When to ask the user
-- If a change affects theme tokens or Tailwind config, confirm desired color/token names (they are referenced throughout UI primitives).
-- If you plan to introduce a new global dependency (add to `package.json`), ask before committing.
+const MyComponent = () => {
+  const { toast } = useToast();
+  return (
+    <div className="animate__animated animate__fadeInUp">
+      <Button onClick={() => toast({ title: "Success", description: "Done!" })}>
+        Click me
+      </Button>
+    </div>
+  );
+};
+```
 
-# Feedback
-Please review for missing details or anything you'd like the AI agent to follow differently (naming, commit style, tests to add).
+**Class merging with `cn()`:**
+```tsx
+import { cn } from "@/lib/utils";
+
+<div className={cn("base-class", isActive && "active-class", { "conditional": state })}>
+  Content
+</div>
+```
