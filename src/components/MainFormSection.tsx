@@ -12,15 +12,15 @@ const MainFormSection = () => {
                 Готові почати <span className="text-gradient">заробляти</span>?
               </h2>
               <p className="body-lg text-muted-foreground mb-6">
-                Залиште заявку і отримайте доступ до курсу зі знижкою 50%
+                Отримайте доступ до курсу назавжди зі знижкою 96%
               </p>
 
               {/* Pricing */}
               <div className="flex items-center justify-center gap-4 mb-6">
-                <span className="text-4xl font-bold text-foreground">$99</span>
-                <span className="text-2xl text-muted-foreground line-through">$199</span>
+                <span className="text-4xl font-bold text-foreground">620 грн.</span>
+                <span className="text-2xl text-muted-foreground line-through">15 500 грн.</span>
                 <span className="px-3 py-1 rounded-full bg-destructive/10 text-destructive font-semibold text-sm">
-                  -50%
+                  -96%
                 </span>
               </div>
 
@@ -43,6 +43,10 @@ const MainFormSection = () => {
                 <div className="flex items-center gap-2">
                   <span className="text-secondary">✓</span>
                   Підтримка
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-secondary">✓</span>
+                  Самі обираєте темп навчання
                 </div>
               </div>
             </div>
