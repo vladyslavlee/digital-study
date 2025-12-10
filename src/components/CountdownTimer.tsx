@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 interface TimeLeft {
   days: number;
@@ -40,10 +40,10 @@ const CountdownTimer = () => {
   }, []);
 
   const timeBlocks = [
-    { value: timeLeft.days, label: "днів" },
-    { value: timeLeft.hours, label: "годин" },
-    { value: timeLeft.minutes, label: "хвилин" },
-    { value: timeLeft.seconds, label: "секунд" },
+    { value: timeLeft.days, label: 'днів' },
+    { value: timeLeft.hours, label: 'годин' },
+    { value: timeLeft.minutes, label: 'хвилин' },
+    { value: timeLeft.seconds, label: 'секунд' },
   ];
 
   return (
@@ -52,7 +52,7 @@ const CountdownTimer = () => {
         <div key={index} className="text-center">
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-card border border-border shadow-sm flex items-center justify-center">
             <span className="text-xl sm:text-2xl font-bold text-primary">
-              {String(block.value).padStart(2, "0")}
+              {String(block.value).padStart(2, '0')}
             </span>
           </div>
           <span className="text-xs text-muted-foreground mt-1 block">{block.label}</span>

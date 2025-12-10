@@ -1,22 +1,16 @@
-# compiled output
-dist/
-tmp/
-out-tsc/
-middleware/
-/coverage
-*i18n*.json
-
-# IDEs and editors
-.idea/
-.vscode/
-
-# dependencies
-/node_modules
-
-.prettierignore
+node_modules
+dist
+build
+.next
+*.min.js
+*.min.css
+.git
+.vscode
+.idea
+bun.lockb
 package-lock.json
-package.json
-src/polyfills.ts
-
-e2e/**/*
-src/assets/**/*
+yarn.lock
+.env
+.env.local
+coverage
+public

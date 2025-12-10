@@ -1,35 +1,38 @@
-import { TrendingUp, Laptop, DollarSign, Clock, Users, Zap } from "lucide-react";
+import { TrendingUp, Laptop, DollarSign, Clock, Users, Zap } from 'lucide-react';
 
 const reasons = [
   {
     icon: TrendingUp,
-    title: "Ти власник малого бізнесу?",
-    description: "Ти зможеш самостійно запускати ефективну рекламу для пошуку нових клієнтів.",
+    title: 'Ти власник малого бізнесу?',
+    description: 'Ти зможеш самостійно запускати ефективну рекламу для пошуку нових клієнтів.',
   },
   {
     icon: Laptop,
-    title: "Хочеш працювати віддалено?",
-    description: "Опанувавши цю навичку, ти зможеш вийти на дохід який не залежить від місця проживання.",
+    title: 'Хочеш працювати віддалено?',
+    description:
+      'Опанувавши цю навичку, ти зможеш вийти на дохід який не залежить від місця проживання.',
   },
   {
     icon: DollarSign,
-    title: "Ти фахівець з SMM або суміжних сфер?",
-    description: "Поєднай рекламу з уже наявними знаннями і отримуй кращі результати для клієнтів",
+    title: 'Ти фахівець з SMM або суміжних сфер?',
+    description: 'Поєднай рекламу з уже наявними знаннями і отримуй кращі результати для клієнтів',
   },
   {
     icon: Users,
-    title: "Розвиваєш особистий бренд?",
-    description: "Ти навчишся точково залучати аудиторію та монетизувати трафік.",
+    title: 'Розвиваєш особистий бренд?',
+    description: 'Ти навчишся точково залучати аудиторію та монетизувати трафік.',
   },
   {
     icon: Clock,
-    title: "Хочеш збільшити свій дохід?",
-    description: "Знання PPC дозволять тобі брати більше клієнтів і швидше вийти на новий рівень доходу.",
+    title: 'Хочеш збільшити свій дохід?',
+    description:
+      'Знання PPC дозволять тобі брати більше клієнтів і швидше вийти на новий рівень доходу.',
   },
   {
     icon: Zap,
-    title: "Хочеш змінити професію?",
-    description: "PPC – простий і зрозумілий старт без глибоких технічних навичок. Ти отримаєш перші результати вже під час навчання.",
+    title: 'Хочеш змінити професію?',
+    description:
+      'PPC – простий і зрозумілий старт без глибоких технічних навичок. Ти отримаєш перші результати вже під час навчання.',
   },
 ];
 
@@ -54,12 +57,14 @@ const ReasonsSection = () => {
                          animate__animated animate__fadeInUp"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10
+              <div
+                className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10
                               flex items-center justify-center mb-5
                               transition-all duration-500 ease-out
                               group-hover:scale-110 group-hover:rotate-6
                               group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-secondary/20
-                              group-hover:shadow-lg group-hover:shadow-primary/20">
+                              group-hover:shadow-lg group-hover:shadow-primary/20"
+              >
                 <reason.icon className="w-7 h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">

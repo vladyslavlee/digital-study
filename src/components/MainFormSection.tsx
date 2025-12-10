@@ -1,9 +1,12 @@
-import PaymentForm from "./PaymentForm";
-import CountdownTimer from "./CountdownTimer";
+import PaymentForm from './PaymentForm';
+import CountdownTimer from './CountdownTimer';
 
 const MainFormSection = () => {
   return (
-    <section id="form" className="section-padding bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+    <section
+      id="form"
+      className="section-padding bg-gradient-to-br from-primary/5 via-background to-secondary/5"
+    >
       <div className="container-main">
         <div className="max-w-2xl mx-auto">
           <div className="bg-card rounded-3xl border border-border shadow-lg p-8 md:p-12">

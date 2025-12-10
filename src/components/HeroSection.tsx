@@ -1,6 +1,6 @@
-import CountdownTimer from "./CountdownTimer";
-import PaymentForm from "./PaymentForm";
-import heroImage from "@/assets/ppc/hero-image.jpg";
+import CountdownTimer from './CountdownTimer';
+import PaymentForm from './PaymentForm';
+import heroImage from '@/assets/ppc/hero-image.jpg';
 
 const HeroSection = () => {
   return (
@@ -16,12 +16,12 @@ const HeroSection = () => {
               </div>
 
               <h1 className="heading-xl text-foreground animate__animated animate__fadeInUp">
-                Курс реклами {" "}
-                <span className="text-gradient">Google, Instagram, Facebook</span>
+                Курс реклами <span className="text-gradient">Google, Instagram, Facebook</span>
               </h1>
 
               <p className="body-lg text-muted-foreground max-w-xl animate__animated animate__fadeInUp animate__delay-1s">
-                Курс для тих, хто хоче працювати віддалено, прокачати навички або залучати клієнтів у свій бізнес.
+                Курс для тих, хто хоче працювати віддалено, прокачати навички або залучати клієнтів
+                у свій бізнес.
               </p>
 
               {/* Pricing */}
