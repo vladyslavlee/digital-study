@@ -32,12 +32,8 @@ const Header = () => {
       <div className="container-main">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#">
+          <a href="/">
             <img src={logoImage} alt="DigitalStudy" className="max-w-[100px] md:max-w-[150px]" />
-            {/* <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">P</span>
-            </div>
-            <span className="font-bold text-xl text-foreground">PPC Pro</span> */}
           </a>
 
           {/* Desktop Navigation */}
@@ -56,7 +52,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="telegram" size="lg" asChild>
-              <a href="https://t.me/" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/digital_study_ua" target="_blank" rel="noopener noreferrer">
                 <Send className="w-4 h-4" />
                 Telegram
               </a>

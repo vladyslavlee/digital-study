@@ -12,7 +12,7 @@ const MainFormSection = () => {
           <div className="bg-card rounded-3xl border border-border shadow-lg p-8 md:p-12">
             <div className="text-center mb-8">
               <h2 className="heading-lg text-foreground mb-4">
-                Готові почати <span className="text-gradient">заробляти</span>?
+                Готові почати <span className="text-gradient">навчання</span>?
               </h2>
               <p className="body-lg text-muted-foreground mb-6">
                 Отримайте доступ до курсу назавжди зі знижкою 96%

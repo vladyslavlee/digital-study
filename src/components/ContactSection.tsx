@@ -20,7 +20,7 @@ const ContactSection = () => {
           </p>
 
           <Button variant="telegram" size="xl" asChild>
-            <a href="https://t.me/" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/digital_study_ua" target="_blank" rel="noopener noreferrer">
               <Send className="w-5 h-5" />
               Написати в Telegram
             </a>

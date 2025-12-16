@@ -261,7 +261,7 @@ const ProgramSection = () => {
 
         <div className="text-center mt-10">
           <Button variant="cta" size="xl" asChild>
-            <a href="#form">Записатися на курс</a>
+            <a href="#form">Отримати доступ до курсу</a>
           </Button>
         </div>
       </div>
