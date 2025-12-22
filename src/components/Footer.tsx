@@ -1,4 +1,5 @@
 import logoImage from '@/assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -12,18 +13,12 @@ const Footer = () => {
 
           {/* Links */}
           <div className="flex items-center gap-6">
-            <a
-              href="#"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Умови та положення
-            </a>
-            <a
-              href="#"
+            <Link to="/terms-and-conditions" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Умови та положення</Link>
+            <Link to="/privacy-policy"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Політика конфіденційності
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -1,31 +1,114 @@
 import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import ReasonsSection from '@/components/ReasonsSection';
-import ProgramSection from '@/components/ProgramSection';
-import ResultsSection from '@/components/ResultsSection';
-import FAQSection from '@/components/FAQSection';
-import MainFormSection from '@/components/MainFormSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
-const PPC = () => {
+const Terms = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className='min-h-screen bg-background'>
       <Header />
       <main>
-        <HeroSection />
-        <ReasonsSection />
-        <ProgramSection />
-        <ResultsSection />
-        <FAQSection />
-        <MainFormSection />
-        <TestimonialsSection />
-        <ContactSection />
+        <section className='min-h-screen pt-20 md:pt-24 pb-12 gradient-hero'>
+          <div className='container-main'>
+            <ul>
+              <li>
+                <h2 className='text-lg font-bold'>Умови та положення (Terms & Conditions)</h2>
+                <p>
+                  Ці Умови регулюють порядок користування сайтом, придбання та використання
+                  онлайн-курсів, а також права й обов’язки сторін.
+                </p>
+                <p>
+                  Користуючись сайтом або купуючи курс, користувач підтверджує свою згоду з цими
+                  Умовами.
+                </p>
+              </li>
+
+              <li className='mt-6'>
+                <h2 className='text-lg font-bold'>1. Надання послуг</h2>
+                <p>
+                  1.1. Продавець надає користувачу доступ до онлайн-курсу після успішної оплати.
+                </p>
+                <p>
+                  1.2. Курс включає відеоуроки, матеріали для завантаження та додаткові ресурси.
+                </p>
+                <p>
+                  1.3. Користувач отримує невиключну ліцензію на використання матеріалів курсу
+                  виключно для особистих цілей.
+                </p>
+                <p>
+                  1 .4. Забороняється копіювання, розповсюдження, передача третім особам або
+                  комерційне використання матеріалів курсу без письмової згоди правовласника.
+                </p>
+              </li>
+
+              <li className='mt-6'>
+                <h2 className='text-lg font-bold'>2. Оплата</h2>
+                <p>2.1. Оплата здійснюється через платіжний сервіс WayForPay на сайті.</p>
+                <p>2.2. Доступ до курсу надається лише після підтвердження успішної оплати.</p>
+                <p>
+                  2.3. У разі відмови в оплаті або повернення коштів доступ до курсу може бути
+                  обмежений або анульований.
+                </p>
+              </li>
+
+              <li className='mt-6'>
+                <h2 className='text-lg font-bold'>3. Повернення коштів</h2>
+                <p>
+                  3.1. Умови повернення коштів регулюються окремим документом — «Політика повернення
+                  коштів», розміщеним на сайті.
+                </p>
+              </li>
+
+              <li className='mt-6'>
+                <h2 className='text-lg font-bold'>4. Обмеження відповідальності</h2>
+                <p>4.1. Матеріали курсу мають інформаційний та освітній характер.</p>
+                <p>
+                  4.2. Результати навчання залежать від індивідуальних зусиль користувача і не
+                  гарантуються.
+                </p>
+                <p>
+                  4.3. Продавець не несе відповідальності за будь-які прямі або непрямі збитки, що
+                  виникли внаслідок використання або неможливості використання курсу.
+                </p>
+              </li>
+
+              <li className='mt-6'>
+                <h2 className='text-lg font-bold'>5. Вирішення спорів</h2>
+                <p>5.1. Усі спори вирішуються шляхом переговорів.</p>
+                <p>
+                  5.2. У разі недосягнення згоди спір підлягає розгляду відповідно до чинного
+                  законодавства України за місцем проживання продавця.
+                </p>
+              </li>
+
+              <li className='mt-6'>
+                <h2 className='text-lg font-bold'>6. Зміни до умов</h2>
+                <p>6.1. Продавець залишає за собою право змінювати ці Умови.</p>
+                <p>
+                  6.2. Актуальна версія Умов публікується на сайті та набирає чинності з моменту
+                  публікації.
+                </p>
+              </li>
+
+              <li className='mt-6'>
+                <h2 className='text-lg font-bold'>7. Контактна інформація</h2>
+                <p>
+                  Електронна пошта:{' '}
+                  <a
+                    className='text-primary'
+                    href='mailto:digitalstudy.ua@gmail.com'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    digitalstudy.ua@gmail.com
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
   );
 };
 
-export default PPC;
+export default Terms;
