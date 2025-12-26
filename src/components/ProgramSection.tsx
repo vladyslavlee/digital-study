@@ -178,42 +178,42 @@ const module2Lessons = [
 
 const ProgramSection = () => {
   return (
-    <section id="program" className="section-padding bg-background">
-      <div className="container-main">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="heading-lg text-foreground mb-4">
-            Програма <span className="text-gradient">курсу</span>
+    <section id='program' className='section-padding bg-background'>
+      <div className='container-main'>
+        <div className='text-center max-w-3xl mx-auto mb-12 md:mb-16'>
+          <h2 className='heading-lg text-foreground mb-4'>
+            Програма <span className='text-gradient'>курсу</span>
           </h2>
-          <p className="body-lg text-muted-foreground">
+          <p className='body-lg text-muted-foreground'>
             2 модулі, 23 практичних уроки — від основ до просунутих стратегій
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className='max-w-4xl mx-auto space-y-6'>
           {/* Module 1 */}
-          <div className="bg-card rounded-2xl border border-border p-6 md:p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">1</span>
+          <div className='bg-card rounded-2xl border border-border p-6 md:p-8'>
+            <div className='flex items-center gap-4 mb-6'>
+              <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center'>
+                <span className='text-primary-foreground font-bold text-lg'>1</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground">Модуль 1</h3>
-                <p className="text-muted-foreground">Поринемо у вивчення контекстної реклами</p>
+                <h3 className='text-xl font-bold text-foreground'>Модуль 1</h3>
+                <p className='text-muted-foreground'>Поринемо у вивчення контекстної реклами</p>
               </div>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type='single' collapsible className='w-full'>
               {module1Lessons.map((lesson, index) => (
                 <AccordionItem key={index} value={`m1-${index}`}>
-                  <AccordionTrigger className="text-left">
-                    <span className="flex items-center gap-3">
-                      <span className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-sm font-medium text-muted-foreground">
+                  <AccordionTrigger className='text-left'>
+                    <span className='flex items-center gap-3'>
+                      <span className='w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-sm font-medium text-muted-foreground'>
                         {index + 1}
                       </span>
                       {lesson.title}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pl-11">
-                    <ul className="list-disc">
+                  <AccordionContent className='pl-11'>
+                    <ul className='list-disc'>
                       {lesson.list.map((item) => (
                         <li> {item}</li>
                       ))}
@@ -225,29 +225,29 @@ const ProgramSection = () => {
           </div>
 
           {/* Module 2 */}
-          <div className="bg-card rounded-2xl border border-border p-6 md:p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
-                <span className="text-secondary-foreground font-bold text-lg">2</span>
+          <div className='bg-card rounded-2xl border border-border p-6 md:p-8'>
+            <div className='flex items-center gap-4 mb-6'>
+              <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center'>
+                <span className='text-secondary-foreground font-bold text-lg'>2</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground">Модуль 2</h3>
-                <p className="text-muted-foreground">Просунута робота та стратегія</p>
+                <h3 className='text-xl font-bold text-foreground'>Модуль 2</h3>
+                <p className='text-muted-foreground'>Просунута робота та стратегія</p>
               </div>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type='single' collapsible className='w-full'>
               {module2Lessons.map((lesson, index) => (
                 <AccordionItem key={index} value={`m2-${index}`}>
-                  <AccordionTrigger className="text-left">
-                    <span className="flex items-center gap-3">
-                      <span className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-sm font-medium text-muted-foreground">
+                  <AccordionTrigger className='text-left'>
+                    <span className='flex items-center gap-3'>
+                      <span className='w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-sm font-medium text-muted-foreground'>
                         {index + 1}
                       </span>
                       {lesson.title}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pl-11">
-                    <ul className="list-disc">
+                  <AccordionContent className='pl-11'>
+                    <ul className='list-disc'>
                       {lesson.list.map((item) => (
                         <li>{item}</li>
                       ))}
@@ -259,9 +259,9 @@ const ProgramSection = () => {
           </div>
         </div>
 
-        <div className="text-center mt-10">
-          <Button variant="cta" size="xl" asChild>
-            <a href="#form">Отримати доступ до курсу</a>
+        <div className='text-center mt-10'>
+          <Button variant='cta' size='xl' asChild>
+            <a href='#form'>Отримати доступ до курсу</a>
           </Button>
         </div>
       </div>

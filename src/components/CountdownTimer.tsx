@@ -47,15 +47,15 @@ const CountdownTimer = () => {
   ];
 
   return (
-    <div className="flex gap-2 sm:gap-3">
+    <div className='flex gap-2 sm:gap-3'>
       {timeBlocks.map((block, index) => (
-        <div key={index} className="text-center">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-card border border-border shadow-sm flex items-center justify-center">
-            <span className="text-xl sm:text-2xl font-bold text-primary">
+        <div key={index} className='text-center'>
+          <div className='w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-card border border-border shadow-sm flex items-center justify-center'>
+            <span className='text-xl sm:text-2xl font-bold text-primary'>
               {String(block.value).padStart(2, '0')}
             </span>
           </div>
-          <span className="text-xs text-muted-foreground mt-1 block">{block.label}</span>
+          <span className='text-xs text-muted-foreground mt-1 block'>{block.label}</span>
         </div>
       ))}
     </div>

@@ -55,22 +55,22 @@ const PaymentForm = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className='space-y-4'>
       <Input
-        type="text"
+        type='text'
         placeholder="Ім'я"
         value={name}
         onChange={(e) => setName(e.target.value)}
         className={variant === 'section' ? 'bg-background' : ''}
       />
       <Input
-        type="tel"
-        placeholder="Номер телефону"
+        type='tel'
+        placeholder='Номер телефону'
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         className={variant === 'section' ? 'bg-background' : ''}
       />
-      <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isLoading}>
+      <Button type='submit' variant='hero' size='xl' className='w-full' disabled={isLoading}>
         {isLoading ? 'Відправка...' : 'Отримати доступ до курсу'}
       </Button>
     </form>
