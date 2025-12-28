@@ -1,57 +1,18 @@
-const testimonials = [
-  {
-    name: 'Олена К.',
-    role: 'Власниця інтернет-магазину',
-    text: 'Завдяки курсу я нарешті зрозуміла, як самостійно налаштовувати рекламу. Тепер економлю на агентствах і отримую кращі результати!',
-    rating: 5,
-  },
-  {
-    name: 'Андрій М.',
-    role: 'Фрилансер',
-    text: 'За місяць після курсу знайшов перших трьох клієнтів. Модуль про пошук замовників — просто золото!',
-    rating: 5,
-  },
-  {
-    name: 'Марія С.',
-    role: 'Маркетолог',
-    text: 'Працюю в маркетингу 3 роки, але курс відкрив багато нового. Особливо сподобався блок про оптимізацію.',
-    rating: 5,
-  },
-  {
-    name: 'Дмитро В.',
-    role: 'Підприємець',
-    text: 'Інвестиція в курс окупилася за 2 тижні. Тепер сам веду рекламу свого бізнесу.',
-    rating: 5,
-  },
-  {
-    name: 'Ольга Н.',
-    role: 'Блогерка',
-    text: 'Навчилася просувати свій блог через рекламу. Аудиторія зросла в 5 разів за 2 місяці!',
-    rating: 5,
-  },
-  {
-    name: 'Олександр Т.',
-    role: 'Студент',
-    text: 'Найкраща інвестиція в себе! Працюю на фрилансі і вже окупив курс за перший місяць.',
-    rating: 5,
-  },
-];
+import { ContentInterface } from '@/interfaces/content.interface';
 
-const TestimonialsSection = () => {
+const TestimonialsSection = ({ content }: { content: ContentInterface }) => {
   return (
     <section className='section-padding bg-card'>
       <div className='container-main'>
         <div className='text-center max-w-3xl mx-auto mb-12 md:mb-16'>
           <h2 className='heading-lg text-foreground mb-4'>
-            Відгуки <span className='text-gradient'>студентів</span>
+            <span className='text-gradient'>{content.testimonials.title}</span>
           </h2>
-          <p className='body-lg text-muted-foreground'>
-            Дізнайтеся, що говорять наші випускники про курс
-          </p>
+          <p className='body-lg text-muted-foreground'>{content.testimonials.subtitle}</p>
         </div>
 
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {testimonials.map((testimonial, index) => (
+          {content.testimonials.testimonialsList.map((testimonial, index) => (
             <div
               key={index}
               className='bg-background rounded-2xl border border-border p-6 hover:shadow-lg transition-all duration-300'

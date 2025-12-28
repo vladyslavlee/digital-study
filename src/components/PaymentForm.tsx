@@ -3,19 +3,22 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
 
+export enum PaymentFormVariant {
+  HERO = 'hero',
+  SECTION = 'section',
+}
+
 interface PaymentFormProps {
-  variant?: 'hero' | 'section';
-  /** External URL to redirect to after successful submit. */
-  redirectUrl?: string;
-  /** Where to open the redirect: `_self` replaces current page, `_blank` opens new tab. */
-  redirectTarget?: '_self' | '_blank';
+  variant: PaymentFormVariant;
+  redirectUrl: string;
+  redirectTarget: '_self' | '_blank';
 }
 
 const PaymentForm = ({
-  variant = 'hero',
+  variant = PaymentFormVariant.HERO,
   redirectUrl = 'https://secure.wayforpay.com/button/b53577cdaf715',
   redirectTarget = '_blank',
-}: PaymentFormProps) => {
+}: Partial<PaymentFormProps>) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [isLoading, setIsLoading] = useState(false);

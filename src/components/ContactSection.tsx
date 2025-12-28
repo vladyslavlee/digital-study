@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
+import { ContentInterface } from '@/interfaces/content.interface';
 import { Send, MessageCircle } from 'lucide-react';
 
-const ContactSection = () => {
+const ContactSection = ({ content }: { content: ContentInterface }) => {
   return (
     <section className='section-padding bg-background'>
       <div className='container-main'>
@@ -11,18 +12,15 @@ const ContactSection = () => {
           </div>
 
           <h2 className='heading-lg text-foreground mb-4'>
-            Є <span className='text-gradient'>питання</span>?
+            <span className='text-gradient'>{content.contact.title}</span>
           </h2>
 
-          <p className='body-lg text-muted-foreground mb-8'>
-            Пишіть у наш Telegram — ми допоможемо та проконсультуємо. Відповімо на будь-які
-            запитання про курс і допоможемо визначитися.
-          </p>
+          <p className='body-lg text-muted-foreground mb-8'>{content.contact.subtitle}</p>
 
           <Button variant='telegram' size='xl' asChild>
             <a href='https://t.me/digital_study_ua' target='_blank' rel='noopener noreferrer'>
               <Send className='w-5 h-5' />
-              Написати в Telegram
+              {content.contact.ctaButtonText}
             </a>
           </Button>
         </div>

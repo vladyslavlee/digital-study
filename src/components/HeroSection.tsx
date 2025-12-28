@@ -1,8 +1,9 @@
+import { ContentInterface } from '@/interfaces/content.interface';
 import CountdownTimer from './CountdownTimer';
-import PaymentForm from './PaymentForm';
+import PaymentForm, { PaymentFormVariant } from './PaymentForm';
 import heroImage from '@/assets/images/ppc/hero-image.jpg';
 
-const HeroSection = () => {
+const HeroSection = ({ content }: { content: ContentInterface }) => {
   return (
     <section className='min-h-screen pt-20 md:pt-24 pb-12 gradient-hero'>
       <div className='container-main'>
@@ -12,24 +13,27 @@ const HeroSection = () => {
             <div className='space-y-6'>
               <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm animate__animated animate__fadeInLeft animate__delay-1s'>
                 <span className='w-2 h-2 rounded-full bg-primary animate-pulse'></span>
-                Набір відкрито
+                {content.hero.badge}
               </div>
 
               <h1 className='heading-xl text-foreground animate__animated animate__fadeInUp'>
-                Курс реклами <span className='text-gradient'>Google, Instagram, Facebook</span>
+                {content.hero.title1} <span className='text-gradient'>{content.hero.title2}</span>
               </h1>
 
               <p className='body-lg text-muted-foreground max-w-xl animate__animated animate__fadeInUp animate__delay-1s'>
-                Курс для тих, хто хоче працювати віддалено, прокачати навички або залучати клієнтів
-                у свій бізнес.
+                {content.hero.subtitle}
               </p>
 
               {/* Pricing */}
               <div className='flex items-center gap-3 animate__animated animate__fadeInLeft animate__delay-1s'>
-                <span className='text-4xl md:text-5xl font-bold text-foreground'>620 грн.</span>
-                <span className='text-2xl text-muted-foreground line-through'>15 500 грн.</span>
+                <span className='text-4xl md:text-5xl font-bold text-foreground'>
+                  {content.prices.current} {content.prices.currency}
+                </span>
+                <span className='text-2xl text-muted-foreground line-through'>
+                  {content.prices.original} {content.prices.currency}
+                </span>
                 <span className='px-3 py-1 rounded-full bg-destructive/30 text-destructive font-semibold text-sm animate__animated animate__pulse animate__infinite animate__slower'>
-                  -96%
+                  -{content.prices.percentageOff}%
                 </span>
               </div>
 
@@ -41,7 +45,10 @@ const HeroSection = () => {
 
               {/* Form */}
               <div className='pt-4 animate__animated animate__fadeInUp animate__delay-2s'>
-                <PaymentForm variant='hero' />
+                <PaymentForm
+                  variant={PaymentFormVariant.HERO}
+                  redirectUrl={content.paymentForm.link}
+                />
               </div>
             </div>
           </div>

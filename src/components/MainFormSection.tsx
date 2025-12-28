@@ -1,7 +1,8 @@
-import PaymentForm from './PaymentForm';
+import PaymentForm, { PaymentFormVariant } from './PaymentForm';
 import CountdownTimer from './CountdownTimer';
+import { ContentInterface } from '@/interfaces/content.interface';
 
-const MainFormSection = () => {
+const MainFormSection = ({ content }: { content: ContentInterface }) => {
   return (
     <section
       id='form'
@@ -34,7 +35,10 @@ const MainFormSection = () => {
               </div>
             </div>
 
-            <PaymentForm variant='section' />
+            <PaymentForm
+              variant={PaymentFormVariant.SECTION}
+              redirectUrl={content.paymentForm.link}
+            />
 
             {/* Trust badges */}
             <div className='mt-8 pt-6 border-t border-border'>
