@@ -11,13 +11,11 @@ export enum PaymentFormVariant {
 interface PaymentFormProps {
   variant: PaymentFormVariant;
   redirectUrl: string;
-  redirectTarget: '_self' | '_blank';
 }
 
 const PaymentForm = ({
   variant = PaymentFormVariant.HERO,
   redirectUrl = 'https://secure.wayforpay.com/button/b53577cdaf715',
-  redirectTarget = '_blank',
 }: Partial<PaymentFormProps>) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -32,6 +30,7 @@ const PaymentForm = ({
         description: 'Будь ласка, заповніть усі поля',
         variant: 'destructive',
       });
+
       return;
     }
 
@@ -42,19 +41,12 @@ const PaymentForm = ({
       description: 'Відкриваємо сторінку оплати в новій вкладці',
     });
 
-    setTimeout(() => {
-      setName('');
-      setPhone('');
+    globalThis.open(redirectUrl, '_blank', 'noopener noreferrer');
 
-      setIsLoading(false);
+    setName('');
+    setPhone('');
 
-      if (redirectTarget === '_self') {
-        globalThis.location.assign(redirectUrl);
-        return;
-      }
-
-      globalThis.open(redirectUrl, '_blank', 'noopener noreferrer');
-    }, 1000);
+    setIsLoading(false);
   };
 
   return (
