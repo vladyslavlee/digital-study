@@ -18,7 +18,7 @@ const FAQSection = ({ content }: { content: ContentInterface }) => {
         </div>
 
         <div className='max-w-3xl mx-auto'>
-          <div className='bg-card rounded-2xl border border-border p-6 md:p-8'>
+          <div className='bg-card rounded-2xl border border-border p-4 md:p-8'>
             <Accordion type='single' collapsible className='w-full'>
               {content.faq.faqList.map((faq, index) => (
                 <AccordionItem key={index} value={`faq-${index}`}>

@@ -1,4 +1,5 @@
 export interface ContentInterface {
+  mainRoute: string;
   paymentForm: {
     link: string;
   };

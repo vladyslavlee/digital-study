@@ -5,12 +5,12 @@ import heroImage from '@/assets/images/ppc/hero-image.jpg';
 
 const HeroSection = ({ content }: { content: ContentInterface }) => {
   return (
-    <section className='min-h-screen pt-20 md:pt-24 pb-12 gradient-hero'>
+    <section className='overflow-hidden min-h-screen pt-24 pb-12 gradient-hero'>
       <div className='container-main'>
         <div className='grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-6rem)]'>
           {/* Left Content */}
           <div className='order-0'>
-            <div className='space-y-6'>
+            <div className='space-y-4'>
               <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm animate__animated animate__fadeInLeft animate__delay-1s'>
                 <span className='w-2 h-2 rounded-full bg-primary animate-pulse'></span>
                 {content.hero.badge}

@@ -20,7 +20,7 @@ const ProgramSection = ({ content }: { content: ContentInterface }) => {
 
         <div className='max-w-4xl mx-auto space-y-6'>
           {content.program.modules.map((module, index) => (
-            <div className='bg-card rounded-2xl border border-border p-6 md:p-8'>
+            <div className='bg-card rounded-2xl border border-border p-4 md:p-8'>
               <div className='flex items-center gap-4 mb-6'>
                 <div className='w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center'>
                   <span className='text-primary-foreground font-bold text-lg'>{index + 1}</span>

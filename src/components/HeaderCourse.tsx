@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Send } from 'lucide-react';
 import logoImage from '@/assets/images/logo.png';
+import { ContentInterface } from '@/interfaces/content.interface';
 
-const HeaderCourse = () => {
+const HeaderCourse = ({ content }: { content: ContentInterface }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -23,7 +24,7 @@ const HeaderCourse = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 ${
         isScrolled
           ? 'bg-card/95 backdrop-blur-md shadow-sm border-b border-border/50'
           : 'bg-transparent'
@@ -32,10 +33,9 @@ const HeaderCourse = () => {
       <div className='container-main'>
         <div className='flex items-center justify-between h-16 md:h-20'>
           {/* Logo */}
-          <a href='/'>
-            <img src={logoImage} alt='DigitalStudy' className='max-w-[100px] md:max-w-[150px]' />
+          <a href={content.mainRoute}>
+            <img src={logoImage} alt='DigitalStudy' className='w-[100px] md:w-[150px]' />
           </a>
-
           {/* Desktop Navigation */}
           <nav className='hidden md:flex items-center gap-8'>
             {navLinks.map((link) => (
@@ -48,7 +48,6 @@ const HeaderCourse = () => {
               </a>
             ))}
           </nav>
-
           {/* CTA Button */}
           <Button variant='telegram' size='lg' asChild>
             <a href='https://t.me/digital_study_ua' target='_blank' rel='noopener noreferrer'>
@@ -56,13 +55,12 @@ const HeaderCourse = () => {
               Telegram
             </a>
           </Button>
-
           {/* Mobile Menu Button */}
           <button
             className='md:hidden p-2 text-foreground'
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
+            {isMobileMenuOpen ? <X className='' /> : <Menu className='w-6 h-6' />}
           </button>
         </div>
 

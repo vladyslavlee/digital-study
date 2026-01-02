@@ -1,10 +1,12 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+import content from '@/assets/content/ppc.json';
+
 const PrivacyPolicy = () => {
   return (
     <div className='min-h-screen bg-background'>
-      <Header />
+      <Header content={content} />
       <main>
         <section className='min-h-screen pt-20 md:pt-24 pb-12 gradient-hero'>
           <div className='container-main'>

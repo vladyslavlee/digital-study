@@ -18,7 +18,7 @@ const ReasonsSection = ({ content }: { content: ContentInterface }) => {
           {content.reasons.reasonsList.map((reason, index) => (
             <div
               key={index}
-              className='group p-6 rounded-2xl bg-background border border-border/50
+              className='group p-4 rounded-2xl bg-background border border-border/50
                          transition-all duration-500 ease-out cursor-pointer
                          hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10
                          hover:-translate-y-2 hover:scale-[1.02]

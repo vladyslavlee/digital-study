@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Send } from 'lucide-react';
 import logoImage from '@/assets/images/logo.png';
+import { ContentInterface } from '@/interfaces/content.interface';
 
-const Header = () => {
+const Header = ({ content }: { content: ContentInterface }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const Header = () => {
       <div className='container-main'>
         <div className='flex items-center justify-between h-16 md:h-20'>
           {/* Logo */}
-          <a href='/'>
+          <a href={content.mainRoute}>
             <img src={logoImage} alt='DigitalStudy' className='max-w-[100px] md:max-w-[150px]' />
           </a>
 

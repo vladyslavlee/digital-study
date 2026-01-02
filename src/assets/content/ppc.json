@@ -1,4 +1,5 @@
 {
+  "mainRoute": "/ppc",
   "paymentForm": {
     "link": "https://secure.wayforpay.com/button/b53577cdaf715"
   },

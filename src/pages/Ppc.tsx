@@ -14,7 +14,7 @@ import content from '@/assets/content/ppc.json';
 const PPC = () => {
   return (
     <div className='min-h-screen bg-background'>
-      <HeaderCourse />
+      <HeaderCourse content={content} />
       <main>
         <HeroSection content={content} />
         <ReasonsSection content={content} />
