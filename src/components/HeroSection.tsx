@@ -38,7 +38,7 @@ const HeroSection = ({ content }: { content: ContentInterface }) => {
               </div>
 
               {/* Form */}
-              <div className='pt-4 animate__animated animate__fadeInUp animate__delay-2s'>
+              <div className='animate__animated animate__fadeInUp animate__delay-2s'>
                 <PaymentForm
                   variant={PaymentFormVariant.HERO}
                   redirectUrl={content.paymentForm.link}

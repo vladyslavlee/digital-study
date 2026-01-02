@@ -17,17 +17,21 @@ const PaymentForm = ({
   variant = PaymentFormVariant.HERO,
   redirectUrl = 'https://secure.wayforpay.com/button/b53577cdaf715',
 }: Partial<PaymentFormProps>) => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  // const [name, setName] = useState('');
+  // const [phone, setPhone] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name.trim() || !phone.trim()) {
+    // const condition = !name.trim() || !phone.trim();
+    const condition = !email.trim();
+
+    if (condition) {
       toast({
         title: 'Помилка',
-        description: 'Будь ласка, заповніть усі поля',
+        description: 'Будь ласка, заповніть всі поля форми.',
         variant: 'destructive',
       });
 
@@ -43,8 +47,9 @@ const PaymentForm = ({
 
     globalThis.open(redirectUrl, '_blank', 'noopener noreferrer');
 
-    setName('');
-    setPhone('');
+    setEmail('');
+    // setName('');
+    // setPhone('');
 
     setIsLoading(false);
   };
@@ -52,6 +57,13 @@ const PaymentForm = ({
   return (
     <form onSubmit={handleSubmit} className='space-y-4'>
       <Input
+        type='email'
+        placeholder='Email'
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className={variant === 'section' ? 'bg-background' : ''}
+      />
+      {/* <Input
         type='text'
         placeholder="Ім'я"
         value={name}
@@ -64,7 +76,7 @@ const PaymentForm = ({
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         className={variant === 'section' ? 'bg-background' : ''}
-      />
+      /> */}
       <Button type='submit' variant='hero' size='xl' className='w-full' disabled={isLoading}>
         {isLoading ? 'Відправка...' : 'Отримати доступ до курсу'}
       </Button>
