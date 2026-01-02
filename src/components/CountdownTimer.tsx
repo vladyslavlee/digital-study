@@ -16,18 +16,23 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    // Set target date to 4 days from now
+    const DAYS = 0;
+    const HOURS = 16;
+    const MINUTES = 0;
+
     const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 4);
+    targetDate.setDate(targetDate.getDate() + DAYS);
+    targetDate.setHours(targetDate.getHours() + HOURS);
+    targetDate.setMinutes(targetDate.getMinutes() + MINUTES);
 
     const calculateTimeLeft = () => {
-      const difference = targetDate.getTime() - new Date().getTime();
+      const difference = targetDate.getTime() - Date.now();
 
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
+          minutes: Math.floor((difference / (1000 * 60)) % 60),
           seconds: Math.floor((difference / 1000) % 60),
         });
       }
@@ -40,7 +45,7 @@ const CountdownTimer = () => {
   }, []);
 
   const timeBlocks = [
-    { value: timeLeft.days, label: 'днів' },
+    // { value: timeLeft.days, label: 'днів' }, // show days if needed
     { value: timeLeft.hours, label: 'годин' },
     { value: timeLeft.minutes, label: 'хвилин' },
     { value: timeLeft.seconds, label: 'секунд' },
@@ -50,7 +55,7 @@ const CountdownTimer = () => {
     <div className='flex gap-2 sm:gap-3'>
       {timeBlocks.map((block, index) => (
         <div key={index} className='text-center'>
-          <div className='w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-card border border-border shadow-sm flex items-center justify-center'>
+          <div className='w-12 h-12 rounded-xl bg-card border border-border shadow-sm flex items-center justify-center'>
             <span className='text-xl sm:text-2xl font-bold text-primary'>
               {String(block.value).padStart(2, '0')}
             </span>

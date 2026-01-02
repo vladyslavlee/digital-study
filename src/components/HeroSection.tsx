@@ -37,18 +37,18 @@ const HeroSection = ({ content }: { content: ContentInterface }) => {
                 </span>
               </div>
 
-              {/* Timer */}
-              <div className='animate__animated animate__fadeInUp animate__delay-2s'>
-                <p className='text-sm text-muted-foreground mb-3'>Знижка діє:</p>
-                <CountdownTimer />
-              </div>
-
               {/* Form */}
               <div className='pt-4 animate__animated animate__fadeInUp animate__delay-2s'>
                 <PaymentForm
                   variant={PaymentFormVariant.HERO}
                   redirectUrl={content.paymentForm.link}
                 />
+              </div>
+
+              {/* Timer */}
+              <div className='animate__animated animate__fadeInUp animate__delay-2s'>
+                <p className='text-sm text-muted-foreground mb-3'>Знижка діє:</p>
+                <CountdownTimer />
               </div>
             </div>
           </div>

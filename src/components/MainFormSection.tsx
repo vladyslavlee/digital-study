@@ -16,22 +16,20 @@ const MainFormSection = ({ content }: { content: ContentInterface }) => {
                 Готові почати <span className='text-gradient'>навчання</span>?
               </h2>
               <p className='body-lg text-muted-foreground mb-6'>
-                Отримайте доступ до курсу назавжди зі знижкою 96%
+                Отримайте доступ до курсу назавжди зі знижкою {content.prices.percentageOff}%
               </p>
 
               {/* Pricing */}
               <div className='flex items-center justify-center gap-4 mb-6'>
-                <span className='text-4xl font-bold text-foreground'>620 грн.</span>
-                <span className='text-2xl text-muted-foreground line-through'>15 500 грн.</span>
-                <span className='px-3 py-1 rounded-full bg-destructive/10 text-destructive font-semibold text-sm'>
-                  -96%
+                <span className='text-4xl font-bold text-foreground'>
+                  {content.prices.current} {content.prices.currency}
                 </span>
-              </div>
-
-              {/* Timer */}
-              <div className='flex flex-col items-center'>
-                <p className='text-sm text-muted-foreground mb-3'>Знижка діє:</p>
-                <CountdownTimer />
+                <span className='text-2xl text-muted-foreground line-through'>
+                  {content.prices.original} {content.prices.currency}
+                </span>
+                <span className='px-3 py-1 rounded-full bg-destructive/10 text-destructive font-semibold text-sm'>
+                  -{content.prices.percentageOff}%
+                </span>
               </div>
             </div>
 
@@ -39,6 +37,12 @@ const MainFormSection = ({ content }: { content: ContentInterface }) => {
               variant={PaymentFormVariant.SECTION}
               redirectUrl={content.paymentForm.link}
             />
+
+            {/* Timer */}
+            <div className='flex flex-col items-center  mt-4'>
+              <p className='text-sm text-muted-foreground mb-3'>Знижка діє:</p>
+              <CountdownTimer />
+            </div>
 
             {/* Trust badges */}
             <div className='mt-8 pt-6 border-t border-border'>
