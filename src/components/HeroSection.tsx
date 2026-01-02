@@ -63,7 +63,7 @@ const HeroSection = ({ content }: { content: ContentInterface }) => {
                 className='relative w-full max-w-md lg:max-w-lg rounded-2xl shadow-2xl object-cover'
               />
               {/* Floating badge */}
-              <div className='absolute -bottom-4 -left-4 bg-card rounded-xl shadow-lg p-3 border border-border animate__animated animate__bounceIn animate__delay-2s'>
+              <div className='absolute -bottom-4 -left-[12px] bg-card rounded-xl shadow-lg p-3 border border-border animate__animated animate__bounceIn animate__delay-2s'>
                 <div className='flex items-center gap-3'>
                   <div className='w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center'>
                     <span className='text-2xl'>🚀</span>
@@ -75,7 +75,7 @@ const HeroSection = ({ content }: { content: ContentInterface }) => {
                 </div>
               </div>
 
-              <div className='absolute top-4 -left-4 bg-card rounded-xl shadow-lg p-3 border border-border animate__animated animate__bounceIn animate__delay-2s'>
+              <div className='absolute top-4 -left-[12px] bg-card rounded-xl shadow-lg p-3 border border-border animate__animated animate__bounceIn animate__delay-2s'>
                 <div className='flex items-center gap-3'>
                   <div className='w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center'>
                     <span className='text-2xl'>🦾</span>
@@ -86,7 +86,7 @@ const HeroSection = ({ content }: { content: ContentInterface }) => {
                 </div>
               </div>
 
-              <div className='absolute bottom-[30px] -right-[20px] bg-card rounded-xl shadow-lg p-3 border border-border animate__animated animate__bounceIn animate__delay-2s'>
+              <div className='absolute bottom-[30px] -right-[12px] bg-card rounded-xl shadow-lg p-3 border border-border animate__animated animate__bounceIn animate__delay-2s'>
                 <div className='flex items-center gap-3'>
                   <div className='w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center'>
                     <span className='text-2xl'>🤓</span>

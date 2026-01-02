@@ -50,14 +50,12 @@ const HeaderCourse = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className='hidden md:block'>
-            <Button variant='telegram' size='lg' asChild>
-              <a href='https://t.me/digital_study_ua' target='_blank' rel='noopener noreferrer'>
-                <Send className='w-4 h-4' />
-                Telegram
-              </a>
-            </Button>
-          </div>
+          <Button variant='telegram' size='lg' asChild>
+            <a href='https://t.me/digital_study_ua' target='_blank' rel='noopener noreferrer'>
+              <Send className='w-4 h-4' />
+              Telegram
+            </a>
+          </Button>
 
           {/* Mobile Menu Button */}
           <button
@@ -82,12 +80,6 @@ const HeaderCourse = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant='telegram' className='mt-2' asChild>
-                <a href='https://t.me/digital_study_ua' target='_blank' rel='noopener noreferrer'>
-                  <Send className='w-4 h-4' />
-                  Telegram
-                </a>
-              </Button>
             </nav>
           </div>
         )}

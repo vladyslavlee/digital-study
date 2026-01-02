@@ -30,14 +30,12 @@ const Header = () => {
           </a>
 
           {/* CTA Button */}
-          <div>
-            <Button variant='telegram' size='lg' asChild>
-              <a href='https://t.me/digital_study_ua' target='_blank' rel='noopener noreferrer'>
-                <Send className='w-4 h-4' />
-                Telegram
-              </a>
-            </Button>
-          </div>
+          <Button variant='telegram' size='lg' asChild>
+            <a href='https://t.me/digital_study_ua' target='_blank' rel='noopener noreferrer'>
+              <Send className='w-4 h-4' />
+              Telegram
+            </a>
+          </Button>
         </div>
       </div>
     </header>
