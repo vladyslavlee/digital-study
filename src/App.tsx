@@ -7,6 +7,7 @@ import Ppc from './pages/Ppc';
 import Terms from './pages/Terms';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import { useLayoutEffect } from 'react';
+import PPCMediaBayer from './pages/PpcMediaBayer';
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const App = () => (
             {/* Redirect root to /ppc */}
             <Route path='/' element={<Navigate to='/ppc' replace />} />
             <Route path='/ppc' element={<Ppc />} />
+            <Route path='/ppc-media-bayer' element={<PPCMediaBayer />} />
             <Route path='/terms-and-conditions' element={<Terms />} />
             <Route path='/privacy-policy' element={<PrivacyPolicy />} />
             {/* Any other route should redirect to /ppc */}

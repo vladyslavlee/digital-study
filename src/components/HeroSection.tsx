@@ -1,7 +1,6 @@
 import { ContentInterface } from '@/interfaces/content.interface';
 import CountdownTimer from './CountdownTimer';
 import PaymentForm, { PaymentFormVariant } from './PaymentForm';
-import heroImage from '@/assets/images/ppc/hero-image.jpg';
 
 const HeroSection = ({ content }: { content: ContentInterface }) => {
   return (
@@ -26,7 +25,7 @@ const HeroSection = ({ content }: { content: ContentInterface }) => {
 
               {/* Pricing */}
               <div className='flex items-center gap-3 animate__animated animate__fadeInLeft animate__delay-1s'>
-                <span className='text-4xl md:text-5xl font-bold text-foreground'>
+                <span className='text-4xl md:text-5xl font-bold text-foreground tracking-[-4px]'>
                   {content.prices.current} {content.prices.currency}
                 </span>
                 <span className='text-2xl text-muted-foreground line-through'>
@@ -58,7 +57,7 @@ const HeroSection = ({ content }: { content: ContentInterface }) => {
             <div className='relative'>
               <div className='absolute -inset-4 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-2xl'></div>
               <img
-                src={heroImage}
+                src={content.hero.heroImage}
                 alt='Успішна дівчина працює за ноутбуком'
                 className='relative w-full max-w-md lg:max-w-lg rounded-2xl shadow-2xl object-cover'
               />

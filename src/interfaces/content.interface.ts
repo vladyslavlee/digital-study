@@ -14,8 +14,8 @@ export interface ContentInterface {
     title1: string;
     title2: string;
     subtitle: string;
+    heroImage: string;
   };
-
   program: {
     title: string;
     subtitle: string;
